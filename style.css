@@ -1,0 +1,74 @@
+body{
+    background-color: #565972;
+}
+
+h1{
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.Container{
+    display: flex;
+    justify-content: center;
+}
+
+.Box{
+    background: 
+    linear-gradient(to bottom right, #3d56d2, transparent),
+    linear-gradient(to top right, #4280dd, transparent),
+    linear-gradient(to top left, #4995e3, transparent),
+    linear-gradient(to bottom left, #50a7e8, transparent);
+    width: 300px;
+    height: 300px;
+    align-content: center;
+    /* border-radius: 10px 100px 200px 500px; */
+    position: relative;
+}
+
+.Inputs{
+    display: flex;
+    justify-content: center;
+    border: solid black;
+}
+
+.inputBox{
+    width: 70px;
+    /* height: 5px; */
+    font-size: 20px;
+}
+
+#top-left {
+    position: absolute;
+    top: -30px;
+    left: -78px;
+  }
+  
+  #top-right {
+    position: absolute;
+    top: -30px;
+    right: -78px;
+  }
+  
+  #bottom-left {
+    position: absolute;
+    bottom: -30px;
+    left: -78px;
+  }
+  
+  #bottom-right {
+    position: absolute;
+    bottom: -30px;
+    right: -78px;
+  }
+
+  a{
+    color: white;
+    padding: 5px 10px;
+    font-size: 30px;
+}
+
+.challengeLink{
+    display: block;
+    text-align: center;
+}
