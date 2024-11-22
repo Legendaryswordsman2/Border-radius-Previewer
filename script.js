@@ -12,6 +12,8 @@ topRightInputBox.addEventListener("input", UpdateBorderRadius);
 bottomLeftInputBox.addEventListener("input", UpdateBorderRadius);
 bottomRightInputBox.addEventListener("input", UpdateBorderRadius);
 
+UpdateResult();
+
 function UpdateBorderRadius() {
     let topLeftValue, topRightValue, bottomLeftValue, bottomRightValue;
 
@@ -21,9 +23,9 @@ function UpdateBorderRadius() {
     bottomRightValue = bottomRightInputBox.value != "" ? bottomRightInputBox.value : 0;
 
     result = topLeftValue + "px "
-    + topRightValue + "px "
-    + bottomRightValue + "px "
-    + bottomLeftValue + "px ";
+        + topRightValue + "px "
+        + bottomRightValue + "px "
+        + bottomLeftValue + "px ";
 
     boxElement.style.borderRadius = result;
 
@@ -36,10 +38,14 @@ bottomLeftInputBox.addEventListener("input", NumbersOnlyAllowed);
 bottomRightInputBox.addEventListener("input", NumbersOnlyAllowed);
 
 
-function NumbersOnlyAllowed(){
+function NumbersOnlyAllowed() {
     this.value = this.value.replace(/[^0-9]/g, '');
 }
 
-function UpdateResult(){
+function UpdateResult() {
+    if (result == "") {
+        UpdateBorderRadius();
+        return;
+    }
     resultText.textContent = result;
 }
