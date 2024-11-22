@@ -25,7 +25,7 @@ function UpdateBorderRadius() {
     result = topLeftValue + "px "
         + topRightValue + "px "
         + bottomRightValue + "px "
-        + bottomLeftValue + "px ";
+        + bottomLeftValue + "px";
 
     boxElement.style.borderRadius = result;
 
@@ -48,4 +48,13 @@ function UpdateResult() {
         return;
     }
     resultText.textContent = result;
+}
+
+let copyButton = document.querySelector(".copyButton");
+if(copyButton != null)
+    copyButton.addEventListener("click", CopyResultToClipboard);
+
+function CopyResultToClipboard(){
+    navigator.clipboard.writeText("Border-radius: " + result);
+    alert("Copied to clipboard: " + "Border-radius: " + result);
 }
