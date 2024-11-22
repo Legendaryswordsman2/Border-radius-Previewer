@@ -13,6 +13,31 @@ h1{
     justify-content: center;
 }
 
+.output{
+    display: flex;
+    justify-content: center;
+}
+
+.outputContent{
+    background-color: white;
+    margin-left: 10px;
+    padding: 10px;
+}
+
+.copyButton{
+    /* height: 10px; */
+}
+
+p{
+    color: black;
+    text-align: center;
+    font-size: 25px;
+}
+
+.borderRadiusText{
+    color: white;
+}
+
 .Box{
     background: 
     linear-gradient(to bottom right, #3d56d2, transparent),

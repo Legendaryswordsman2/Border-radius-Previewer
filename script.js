@@ -1,3 +1,5 @@
+let resultText = document.querySelector(".outputContent");
+let result = "";
 const boxElement = document.querySelector('.Box')
 
 let topLeftInputBox = document.getElementById("top-left");
@@ -18,15 +20,26 @@ function UpdateBorderRadius() {
     bottomLeftValue = bottomLeftInputBox.value != "" ? bottomLeftInputBox.value : 0;
     bottomRightValue = bottomRightInputBox.value != "" ? bottomRightInputBox.value : 0;
 
+    result = topLeftValue + "px "
+    + topRightValue + "px "
+    + bottomRightValue + "px "
+    + bottomLeftValue + "px ";
 
-    boxElement.style.borderRadius = topLeftValue + "px "
-        + topRightValue + "px "
-        + bottomRightValue + "px "
-        + bottomLeftValue + "px ";
+    boxElement.style.borderRadius = result;
+
+    UpdateResult();
 }
 
-topLeftInputBox.addEventListener("input", NumbersOnlyAllowed)
+topLeftInputBox.addEventListener("input", NumbersOnlyAllowed);
+topRightInputBox.addEventListener("input", NumbersOnlyAllowed);
+bottomLeftInputBox.addEventListener("input", NumbersOnlyAllowed);
+bottomRightInputBox.addEventListener("input", NumbersOnlyAllowed);
+
 
 function NumbersOnlyAllowed(){
     this.value = this.value.replace(/[^0-9]/g, '');
+}
+
+function UpdateResult(){
+    resultText.textContent = result;
 }
